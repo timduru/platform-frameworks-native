@@ -2924,8 +2924,6 @@ status_t SurfaceFlinger::captureScreenImplLocked(
         uint32_t reqWidth, uint32_t reqHeight,
         uint32_t minLayerZ, uint32_t maxLayerZ)
 {
-if(true) return PERMISSION_DENIED;
-
     ATRACE_CALL();
 
     // get screen geometry
