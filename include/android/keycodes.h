@@ -302,7 +302,15 @@ enum {
     AKEYCODE_TV_CONTENTS_MENU = 256,
     AKEYCODE_TV_MEDIA_CONTEXT_MENU = 257,
     AKEYCODE_TV_TIMER_PROGRAMMING = 258,
-    AKEYCODE_HELP            = 259
+    AKEYCODE_HELP            = 259,
+    AKEYCODE_WIRELESS        = 260,
+    AKEYCODE_BLUETOOTH       = 261,
+    AKEYCODE_TOUCHPAD        = 262,
+    AKEYCODE_BRIGHTNESS_AUTO = 263,
+    AKEYCODE_CAPTURE         = 264,
+    AKEYCODE_EUROPE_1        = 265,
+    AKEYCODE_EUROPE_2        = 266,
+
 
     // NOTE: If you add a new keycode here you must also add it to several other files.
     //       Refer to frameworks/base/core/java/android/view/KeyEvent.java for the full list.

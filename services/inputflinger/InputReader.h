@@ -141,6 +141,9 @@ struct InputReaderConfiguration {
         // The location calibration matrix changed.
         TOUCH_AFFINE_TRANSFORMATION = 1 << 6,
 
+        // The touchpad gesture mode has changed.
+        CHANGE_TOUCHPAD_MODE = 1 << 7,
+
         // All devices must be reopened.
         CHANGE_MUST_REOPEN = 1 << 31,
     };
@@ -227,6 +230,8 @@ struct InputReaderConfiguration {
 
     // True to show the location of touches on the touch screen as spots.
     bool showTouches;
+    int32_t touchpadMode;
+
 
     InputReaderConfiguration() :
             virtualKeyQuietTime(0),
@@ -244,6 +249,7 @@ struct InputReaderConfiguration {
             pointerGestureSwipeMaxWidthRatio(0.25f),
             pointerGestureMovementSpeedRatio(0.8f),
             pointerGestureZoomSpeedRatio(0.3f),
+            touchpadMode(1),
             showTouches(false) { }
 
     bool getDisplayInfo(bool external, DisplayViewport* outViewport) const;

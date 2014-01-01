@@ -2788,6 +2788,24 @@ void TouchInputMapper::configure(nsecs_t when,
         configureSurface(when, &resetNeeded);
     }
 
+    if (mParameters.deviceType == Parameters::DEVICE_TYPE_POINTER) {
+        if (!changes || (changes & InputReaderConfiguration::CHANGE_TOUCHPAD_MODE)) {
+            // Change touchpad gesture
+            if (mConfig.touchpadMode == 0) {
+                mParameters.gestureMode = Parameters::GESTURE_MODE_SPOTS;
+            } else if (mConfig.touchpadMode == 1) {
+                mParameters.gestureMode = Parameters::GESTURE_MODE_POINTER;
+            } else {
+                ALOGW("Invalid value for touchpadMode: '%d'", mConfig.touchpadMode);
+            }
+            // Configure device sources, surface dimensions, orientation and
+            // scaling factors.
+            configureSurface(when, &resetNeeded);
+        }
+    }
+
+
+
     if (changes && resetNeeded) {
         // Send reset, unless this is the first time the device has been configured,
         // in which case the reader will call reset itself after all mappers are ready.
