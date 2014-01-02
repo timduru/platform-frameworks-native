@@ -2929,8 +2929,8 @@ status_t SurfaceFlinger::captureScreen(const sp<IBinder>& display,
         virtual bool handler() {
             Mutex::Autolock _l(flinger->mStateLock);
             sp<const DisplayDevice> hw(flinger->getDisplayDevice(display));
-#ifdef USE_MHEAP_SCREENSHOT
             bool useReadPixels = this->useReadPixels && !flinger->mGpuToCpuSupported;
+#ifdef USE_MHEAP_SCREENSHOT
             if (!useReadPixels) {
 #endif
                 result = flinger->captureScreenImplLocked(hw,
