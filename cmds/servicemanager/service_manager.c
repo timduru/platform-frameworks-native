@@ -38,6 +38,7 @@ static struct {
 #ifdef SECTVOUT
     { AID_MEDIA, "SecTVOutService" },
 #endif
+    { AID_MEDIA, "media.nvidia.audio_alsa" },
     { AID_DRM,   "drm.drmManager" },
     { AID_NFC,   "nfc" },
     { AID_BLUETOOTH, "bluetooth" },
