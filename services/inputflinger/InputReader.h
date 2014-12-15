@@ -143,6 +143,8 @@ struct InputReaderConfiguration {
 
         // The touchpad gesture mode has changed.
         CHANGE_TOUCHPAD_MODE = 1 << 7,
+        CHANGE_RIGHTCLICK_MODE = 1 << 8,
+
 
         // All devices must be reopened.
         CHANGE_MUST_REOPEN = 1 << 31,
@@ -231,6 +233,7 @@ struct InputReaderConfiguration {
     // True to show the location of touches on the touch screen as spots.
     bool showTouches;
     int32_t touchpadMode;
+    int rightclickMode;
 
 
     InputReaderConfiguration() :
@@ -250,6 +253,7 @@ struct InputReaderConfiguration {
             pointerGestureMovementSpeedRatio(0.8f),
             pointerGestureZoomSpeedRatio(0.3f),
             touchpadMode(1),
+            rightclickMode(0),
             showTouches(false) { }
 
     bool getDisplayInfo(bool external, DisplayViewport* outViewport) const;
@@ -641,6 +645,7 @@ public:
     void process(const RawEvent* rawEvent);
 
     uint32_t getButtonState() const;
+    void setRightClickMode(int mode);
 
 private:
     bool mBtnLeft;
@@ -651,8 +656,10 @@ private:
     bool mBtnForward;
     bool mBtnExtra;
     bool mBtnTask;
+    int mRightClickMode;
 
     void clearButtons();
+
 };
 
 

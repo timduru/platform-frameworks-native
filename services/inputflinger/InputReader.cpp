@@ -1112,6 +1112,12 @@ CursorButtonAccumulator::CursorButtonAccumulator() {
     clearButtons();
 }
 
+void CursorButtonAccumulator::setRightClickMode(int mode) 
+{
+    mRightClickMode = mode;
+    ALOGD("right click mode: '%d'", mode);
+}
+
 void CursorButtonAccumulator::reset(InputDevice* device) {
     mBtnLeft = device->isKeyPressed(BTN_LEFT);
     mBtnRight = device->isKeyPressed(BTN_RIGHT);
@@ -1171,7 +1177,9 @@ uint32_t CursorButtonAccumulator::getButtonState() const {
         result |= AMOTION_EVENT_BUTTON_PRIMARY;
     }
     if (mBtnRight) {
-        result |= AMOTION_EVENT_BUTTON_SECONDARY;
+        if(mRightClickMode == 0) result |= AMOTION_EVENT_BUTTON_SECONDARY;
+        else result |= AMOTION_EVENT_BUTTON_BACK;
+
     }
     if (mBtnMiddle) {
         result |= AMOTION_EVENT_BUTTON_TERTIARY;
@@ -2787,6 +2795,11 @@ void TouchInputMapper::configure(nsecs_t when,
         // scaling factors.
         configureSurface(when, &resetNeeded);
     }
+
+    if (!changes || (changes & InputReaderConfiguration::CHANGE_RIGHTCLICK_MODE)) {
+         mCursorButtonAccumulator.setRightClickMode( mConfig.rightclickMode);
+    }
+
 
     if (mParameters.deviceType == Parameters::DEVICE_TYPE_POINTER) {
         if (!changes || (changes & InputReaderConfiguration::CHANGE_TOUCHPAD_MODE)) {
