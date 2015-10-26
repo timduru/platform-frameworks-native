@@ -303,14 +303,22 @@ enum {
     AKEYCODE_TV_MEDIA_CONTEXT_MENU = 257,
     AKEYCODE_TV_TIMER_PROGRAMMING = 258,
     AKEYCODE_HELP            = 259,
-    AKEYCODE_WIRELESS        = 260,
-    AKEYCODE_BLUETOOTH       = 261,
-    AKEYCODE_TOUCHPAD        = 262,
-    AKEYCODE_BRIGHTNESS_AUTO = 263,
-    AKEYCODE_CAPTURE         = 264,
-    AKEYCODE_EUROPE_1        = 265,
-    AKEYCODE_EUROPE_2        = 266,
+    AKEYCODE_NAVIGATE_PREVIOUS = 260,
+    AKEYCODE_NAVIGATE_NEXT   = 261,
+    AKEYCODE_NAVIGATE_IN     = 262,
+    AKEYCODE_NAVIGATE_OUT    = 263,
+    AKEYCODE_MEDIA_SKIP_FORWARD = 272,
+    AKEYCODE_MEDIA_SKIP_BACKWARD = 273,
+    AKEYCODE_MEDIA_STEP_FORWARD = 274,
+    AKEYCODE_MEDIA_STEP_BACKWARD = 275,
 
+    AKEYCODE_WIRELESS        = 276,
+    AKEYCODE_BLUETOOTH       = 277,
+    AKEYCODE_TOUCHPAD        = 278,
+    AKEYCODE_BRIGHTNESS_AUTO = 279,
+    AKEYCODE_CAPTURE         = 280,
+    AKEYCODE_EUROPE_1        = 281,
+    AKEYCODE_EUROPE_2        = 282
 
     // NOTE: If you add a new keycode here you must also add it to several other files.
     //       Refer to frameworks/base/core/java/android/view/KeyEvent.java for the full list.
