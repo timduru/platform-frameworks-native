@@ -35,6 +35,7 @@ LOCAL_CPPFLAGS += -Wno-gnu-zero-variadic-macro-arguments
 
 # Don't warn about struct padding
 LOCAL_CPPFLAGS += -Wno-padded
+LOCAL_CPPFLAGS += -Wno-missing-prototypes -Wno-return-type-c-linkage
 
 LOCAL_SRC_FILES := \
 	IGraphicBufferConsumer.cpp \

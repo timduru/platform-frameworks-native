@@ -3232,7 +3232,7 @@ status_t SurfaceFlinger::captureScreen(const sp<IBinder>& display,
 #endif
                 result = flinger->captureScreenImplLocked(hw, producer,
                     sourceCrop, reqWidth, reqHeight, minLayerZ, maxLayerZ,
-                    useIdentityTransform, rotation);
+                    useIdentityTransform, rotation, useReadPixels);
 #ifdef USE_MHEAP_SCREENSHOT
             } else {
                 // Should never get here

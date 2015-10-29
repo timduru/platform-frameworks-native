@@ -26,6 +26,10 @@
 #define UI_PIXELFORMAT_H
 
 #include <hardware/hardware.h>
+#include <stdint.h>
+#include <sys/types.h>
+
+#include <utils/Errors.h>
 
 namespace android {
 

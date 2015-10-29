@@ -234,9 +234,9 @@ struct InputReaderConfiguration {
     float pointerGestureZoomSpeedRatio;
 
     // True to show the location of touches on the touch screen as spots.
-    bool showTouches;
     int32_t touchpadMode;
     int rightclickMode;
+    bool showTouches;
 
 
     InputReaderConfiguration() :
