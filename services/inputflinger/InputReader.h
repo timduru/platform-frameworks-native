@@ -145,8 +145,8 @@ struct InputReaderConfiguration {
         CHANGE_EXTERNAL_STYLUS_PRESENCE = 1 << 7,
 
         // The touchpad gesture mode has changed.
-        CHANGE_TOUCHPAD_MODE = 1 << 7,
-        CHANGE_RIGHTCLICK_MODE = 1 << 8,
+        CHANGE_TOUCHPAD_MODE = 1 << 8,
+        CHANGE_RIGHTCLICK_MODE = 1 << 9,
 
 
         // All devices must be reopened.
