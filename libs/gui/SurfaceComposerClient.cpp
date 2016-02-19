@@ -769,7 +769,7 @@ status_t ScreenshotClient::update(const sp<IBinder>& display,
     if (ret == NO_ERROR) {
         mBuffer.format = PIXEL_FORMAT_RGBA_8888;
         mBuffer.stride = mBuffer.width;
-        mBuffer.data = (uint8_t *)mHeap->getBase();
+        mBuffer.data = static_cast<uint8_t *>(mHeap->getBase());
     }
     return ret;
 #else

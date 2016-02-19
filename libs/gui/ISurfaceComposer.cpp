@@ -395,7 +395,7 @@ status_t BnSurfaceComposer::onTransact(
                     sourceCrop, reqWidth, reqHeight, minLayerZ, maxLayerZ,
                     useIdentityTransform,
                     static_cast<ISurfaceComposer::Rotation>(rotation));
-            reply->writeStrongBinder(heap->asBinder());
+            reply->writeStrongBinder(IInterface::asBinder(heap));
             reply->writeInt32(w);
             reply->writeInt32(h);
             reply->writeInt32(res);

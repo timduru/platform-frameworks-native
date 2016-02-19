@@ -15,7 +15,7 @@
  */
 
 #ifndef INCLUDED_FROM_FRAMEBUFFER_NATIVE_WINDOW_CPP
-#warning "FramebufferNativeWindow is deprecated"
+//#warning "FramebufferNativeWindow is deprecated"
 #endif
 
 #ifndef ANDROID_FRAMEBUFFER_NATIVE_WINDOW_H
