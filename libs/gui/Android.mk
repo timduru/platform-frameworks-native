@@ -38,6 +38,8 @@ LOCAL_CPPFLAGS += -Wno-gnu-zero-variadic-macro-arguments
 LOCAL_CPPFLAGS += -Wno-padded
 LOCAL_CPPFLAGS += -Wno-missing-prototypes -Wno-return-type-c-linkage
 
+LOCAL_CPPFLAGS += -DDEBUG_ONLY_CODE=$(if $(filter userdebug eng,$(TARGET_BUILD_VARIANT)),1,0)
+
 LOCAL_SRC_FILES := \
 	IGraphicBufferConsumer.cpp \
 	IConsumerListener.cpp \

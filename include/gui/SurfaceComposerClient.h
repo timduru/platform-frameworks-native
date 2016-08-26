@@ -43,6 +43,7 @@ class Composer;
 #ifdef USE_MHEAP_SCREENSHOT
 class IMemoryHeap;
 #endif
+class HdrCapabilities;
 class ISurfaceComposerClient;
 class IGraphicBufferProducer;
 class Region;
@@ -138,7 +139,14 @@ public:
     status_t    setPosition(const sp<IBinder>& id, float x, float y);
     status_t    setSize(const sp<IBinder>& id, uint32_t w, uint32_t h);
     status_t    setCrop(const sp<IBinder>& id, const Rect& crop);
+    status_t    setFinalCrop(const sp<IBinder>& id, const Rect& crop);
     status_t    setLayerStack(const sp<IBinder>& id, uint32_t layerStack);
+    status_t    deferTransactionUntil(const sp<IBinder>& id,
+            const sp<IBinder>& handle, uint64_t frameNumber);
+    status_t    setOverrideScalingMode(const sp<IBinder>& id,
+            int32_t overrideScalingMode);
+    status_t    setPositionAppliesWithResize(const sp<IBinder>& id);
+
     status_t    destroySurface(const sp<IBinder>& id);
 
     status_t clearLayerFrameStats(const sp<IBinder>& token) const;
@@ -146,6 +154,9 @@ public:
 
     static status_t clearAnimationFrameStats();
     static status_t getAnimationFrameStats(FrameStats* outStats);
+
+    static status_t getHdrCapabilities(const sp<IBinder>& display,
+            HdrCapabilities* outCapabilities);
 
     static void setDisplaySurface(const sp<IBinder>& token,
             const sp<IGraphicBufferProducer>& bufferProducer);
