@@ -3227,7 +3227,7 @@ status_t SurfaceFlinger::captureScreen(const sp<IBinder>& display,
         const sp<IGraphicBufferProducer>& producer,
         Rect sourceCrop, uint32_t reqWidth, uint32_t reqHeight,
         uint32_t minLayerZ, uint32_t maxLayerZ,
-        bool useIdentityTransform, ISurfaceComposer::Rotation rotation) {
+        bool useIdentityTransform, ISurfaceComposer::Rotation rotation, bool iscpuConsumer) {
 
     if (CC_UNLIKELY(display == 0))
         return BAD_VALUE;
@@ -3468,7 +3468,7 @@ status_t SurfaceFlinger::captureScreenImplLocked(
                 if (image != EGL_NO_IMAGE_KHR) {
                     // this binds the given EGLImage as a framebuffer for the
                     // duration of this scope.
-                    RenderEngine::BindImageAsFramebuffer imageBond(getRenderEngine(), image);
+                    RenderEngine::BindImageAsFramebuffer imageBond(getRenderEngine(), image, isLocalScreenshot,  reqWidth, reqHeight); // TOCHECK
                     if (imageBond.getStatus() == NO_ERROR) {
                         // this will in fact render into our dequeued buffer
                         // via an FBO, which means we didn't have to create

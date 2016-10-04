@@ -3094,9 +3094,9 @@ void TouchInputMapper::configure(nsecs_t when,
         if (!changes || (changes & InputReaderConfiguration::CHANGE_TOUCHPAD_MODE)) {
             // Change touchpad gesture
             if (mConfig.touchpadMode == 0) {
-                mParameters.gestureMode = Parameters::GESTURE_MODE_SPOTS;
+                mParameters.gestureMode = Parameters::GESTURE_MODE_MULTI_TOUCH;
             } else if (mConfig.touchpadMode == 1) {
-                mParameters.gestureMode = Parameters::GESTURE_MODE_POINTER;
+                mParameters.gestureMode = Parameters::GESTURE_MODE_SINGLE_TOUCH;
             } else {
                 ALOGW("Invalid value for touchpadMode: '%d'", mConfig.touchpadMode);
             }

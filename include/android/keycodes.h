@@ -758,7 +758,7 @@ enum {
     /** Copy key. */
     AKEYCODE_COPY = 278,
     /** Paste key. */
-    AKEYCODE_PASTE = 279
+    AKEYCODE_PASTE = 279,
     AKEYCODE_WIRELESS        = 280,
     AKEYCODE_BLUETOOTH       = 281,
     AKEYCODE_TOUCHPAD        = 282,

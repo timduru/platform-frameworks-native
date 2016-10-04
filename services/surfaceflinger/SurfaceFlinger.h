@@ -345,7 +345,6 @@ private:
             Rect sourceCrop, uint32_t reqWidth, uint32_t reqHeight,
             uint32_t minLayerZ, uint32_t maxLayerZ,
             bool useIdentityTransform, Transform::orientation_flags rotation,
-            bool useReadPixels);
             bool isLocalScreenshot);
 
 #ifdef USE_MHEAP_SCREENSHOT

@@ -190,13 +190,14 @@ void SensorService::onFirstRef() {
                 registerSensor(new LinearAccelerationSensor(list, count),
                                !needLinearAcceleration, true);
 
-                aSensor = registerVirtualSensor( new OrientationSensor() );
+/*                aSensor = registerVirtualSensor( new OrientationSensor() );
                 if (virtualSensorsNeeds & (1<<SENSOR_TYPE_ROTATION_VECTOR)) {
                     if (orientationIndex == -1) {
                         // some sensor HALs don't provide an orientation sensor.
                         mUserSensorList.add(aSensor);
                     }
                 }
+*/
                 // virtual debugging sensors are not for user
                 registerSensor( new CorrectedGyroSensor(list, count), true, true);
                 registerSensor( new GyroDriftSensor(), true, true);
