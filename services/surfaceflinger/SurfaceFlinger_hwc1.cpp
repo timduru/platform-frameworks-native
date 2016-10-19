@@ -79,6 +79,7 @@
 
 #include "RenderEngine/RenderEngine.h"
 #include <cutils/compiler.h>
+#include <cutils/iosched_policy.h>
 
 #define DISPLAY_COUNT       1
 
@@ -515,6 +516,7 @@ void SurfaceFlinger::init() {
 
     mEventControlThread = new EventControlThread(this);
     mEventControlThread->run("EventControl", PRIORITY_URGENT_DISPLAY);
+    android_set_rt_ioprio(mEventControlThread->getTid(), 1);
 
     // set a fake vsync period if there is no HWComposer
     if (mHwc->initCheck() != NO_ERROR) {
