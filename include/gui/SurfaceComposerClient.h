@@ -103,6 +103,14 @@ public:
             uint32_t flags = 0  // usage flags
     );
 
+sp<SurfaceControl> createSurface(
+        int display,
+        uint32_t w,
+        uint32_t h,
+        PixelFormat format,
+        uint32_t flags);
+
+
     //! Create a virtual display
     static sp<IBinder> createDisplay(const String8& displayName, bool secure);
 

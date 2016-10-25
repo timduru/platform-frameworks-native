@@ -556,6 +556,24 @@ void SurfaceComposerClient::dispose() {
     mStatus = NO_INIT;
 }
 
+// old ICS createSurface _ZN7android21SurfaceComposerClient13createSurfaceEijjij
+sp<SurfaceControl> SurfaceComposerClient::createSurface(
+        int display,
+        uint32_t w,
+        uint32_t h,
+        PixelFormat format,
+        uint32_t flags)
+{
+    String8 name;
+    const size_t SIZE = 128;
+    char buffer[SIZE];
+    snprintf(buffer, SIZE, "<pid_%d>", getpid());
+    name.append(buffer);
+
+    return this->createSurface(name, w, h, format, flags);
+}
+
+
 sp<SurfaceControl> SurfaceComposerClient::createSurface(
         const String8& name,
         uint32_t w,
