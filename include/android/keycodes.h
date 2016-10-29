@@ -759,13 +759,22 @@ enum {
     AKEYCODE_COPY = 278,
     /** Paste key. */
     AKEYCODE_PASTE = 279,
-    AKEYCODE_WIRELESS        = 280,
-    AKEYCODE_BLUETOOTH       = 281,
-    AKEYCODE_TOUCHPAD        = 282,
-    AKEYCODE_BRIGHTNESS_AUTO = 283,
-    AKEYCODE_CAPTURE         = 284,
-    AKEYCODE_EUROPE_1        = 285,
-    AKEYCODE_EUROPE_2        = 286
+    /** fingerprint navigation key, up. */
+    AKEYCODE_SYSTEM_NAVIGATION_UP = 280,
+    /** fingerprint navigation key, down. */
+    AKEYCODE_SYSTEM_NAVIGATION_DOWN = 281,
+    /** fingerprint navigation key, left. */
+    AKEYCODE_SYSTEM_NAVIGATION_LEFT = 282,
+    /** fingerprint navigation key, right. */
+    AKEYCODE_SYSTEM_NAVIGATION_RIGHT = 283,
+
+    AKEYCODE_WIRELESS        = 284,
+    AKEYCODE_BLUETOOTH       = 285,
+    AKEYCODE_TOUCHPAD        = 286,
+    AKEYCODE_BRIGHTNESS_AUTO = 287,
+    AKEYCODE_CAPTURE         = 288,
+    AKEYCODE_EUROPE_1        = 289,
+    AKEYCODE_EUROPE_2        = 290
 
     // NOTE: If you add a new keycode here you must also add it to several other files.
     //       Refer to frameworks/base/core/java/android/view/KeyEvent.java for the full list.

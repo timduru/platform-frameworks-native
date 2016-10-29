@@ -67,6 +67,7 @@ LOCAL_SRC_FILES := \
 	ISurfaceComposer.cpp \
 	ISurfaceComposerClient.cpp \
 	LayerState.cpp \
+	OccupancyTracker.cpp \
 	Sensor.cpp \
 	SensorEventQueue.cpp \
 	SensorManager.cpp \
